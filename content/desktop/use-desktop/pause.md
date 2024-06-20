@@ -1,17 +1,16 @@
 ---
-description: understand what pausing Docker Dashboard means
+description: 了解暂停 Docker Dashboard 的含义
 keywords: Docker Dashboard, manage, containers, gui, dashboard, pause, user manual
-title: Pause Docker Desktop
+title: 暂停 Docker Desktop
 ---
 
-When Docker Desktop is paused, the Linux VM running Docker Engine is paused, the current state of all your containers are saved in memory, and all processes are frozen. This reduces the CPU and memory usage and helps you retain a longer battery life on your laptop.
+当 Docker Desktop 被暂停时，运行 Docker 引擎的 Linux 虚拟机也会被暂停，所有容器的当前状态保存在内存中，所有进程都会被冻结。这将减少 CPU 和内存的使用，有助于延长笔记本电脑的电池寿命。
 
-You can manually pause Docker Desktop by selecting the Docker menu {{< inline-image src="../images/whale-x.svg" alt="whale menu" >}} and then **Pause**. To manually resume Docker Desktop, select the **Resume** option in the Docker menu, or run any Docker CLI command.
+你可以通过选择 Docker 菜单 {{< inline-image src="../images/whale-x.svg" alt="whale menu" >}} 并选择 **Pause** 来手动暂停 Docker Desktop。要手动恢复 Docker Desktop，请在 Docker 菜单中选择 **Resume** 选项，或运行任何 Docker CLI 命令。
 
-When you manually pause Docker Desktop, a paused status displays on the Docker menu and on the Docker Dashboard. You can still access the **Settings** and the **Troubleshoot** menu.
+当你手动暂停 Docker Desktop 时，Docker 菜单和 Docker Dashboard 上会显示暂停状态。你仍然可以访问 **Settings** 和 **Troubleshoot** 菜单。
 
->**Tip**
+>**提示**
 >
-> The Resource Saver feature, available in Docker Desktop version 4.24 and later, is enabled by default and provides better
-> CPU and memory savings than the manual Pause feature. See [here](resource-saver.md) for more info.
+> Docker Desktop 4.24 及更高版本中可用的 Resource Saver 功能默认启用，提供比手动暂停功能更好的 CPU 和内存节省效果。更多信息请参见[这里](resource-saver.md)。
 { .tip }
