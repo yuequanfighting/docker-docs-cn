@@ -1,178 +1,132 @@
 ---
-description: Understand what you can do with the Volumes view on Docker Dashboard
+description: 了解如何在 Docker Dashboard 的 Volumes 视图中操作
 keywords: Docker Dashboard, manage, containers, gui, dashboard, volumes, user manual
-title: Explore Volumes
+title: 探索 Volumes 视图
 ---
 
-The **Volumes** view in Docker Dashboard lets you create, delete, and perform
-other actions on your [volumes](../../storage/volumes.md). You can also see
-which volumes are being used as well as inspect the files and folders in your
-volumes.
+**Volumes** 视图让你可以在不使用 CLI 的情况下管理 Docker 卷。默认情况下，它会显示本地磁盘上的所有 Docker 卷列表。
 
-## View your volumes
+## 查看卷
 
-You can view the following information about your volumes:
+你可以查看有关卷的以下信息：
 
-- Name: The name of the volume.
-- Status: Whether the volume is in-use by a container or not.
-- Created: How long ago the volume was created.
-- Size: The size of the volume.
+- 名称：卷的名称。
+- 状态：卷是否被容器使用。
+- 创建时间：卷创建的时间。
+- 大小：卷的大小。
 
-By default, the **Volumes** view displays a list of all the volumes.
+默认情况下，**Volumes** 视图会显示所有卷的列表。
 
-You can filter and sort volumes as well as modify which columns are displayed by
-doing the following:
+你可以通过以下操作筛选和排序卷以及修改显示的列：
 
-- Filter volumes by name: Use the **Search** field.
-- Filter volumes by status: To the right of the search bar, filter volumes by
-  **In use** or **Unused**.
-- Sort volumes: Select a column name to sort the volumes.
-- Customize columns: To the right of the search bar, choose what volume
-  information to display.
+- 按名称筛选卷：使用 **Search** 字段。
+- 按状态筛选卷：在搜索栏右侧，通过 **In use** 或 **Unused** 筛选卷。
+- 排序卷：选择列名以排序卷。
+- 自定义列：在搜索栏右侧，选择要显示的卷信息。
 
-## Clone a volume
+## 克隆卷
 
-Cloning a volume creates a new volume with a copy of all of the data from the
-cloned volume. When cloning a volume used by one or more running containers, the
-containers are temporarily stopped while Docker clones the data, and then
-restarted when the cloning process is completed.
+克隆卷会创建一个新卷，并复制被克隆卷中的所有数据。当克隆被一个或多个运行中的容器使用的卷时，容器会在克隆数据时暂时停止，并在克隆过程完成后重新启动。
 
-To clone a volume:
+克隆卷步骤如下：
 
-1. Sign in to Docker Desktop. You must be signed in to clone a volume.
-2. Select the **Clone** icon in the **Actions** column for the volume you want
-   to clone.
-3. In the **Clone a volume** modal, specify a **Volume name**, and then select
-   **Clone**.
+1. 登录 Docker Desktop。你必须登录才能克隆卷。
+2. 在要克隆的卷的 **Actions** 列中选择 **Clone** 图标。
+3. 在 **Clone a volume** 模态窗口中，指定 **Volume name**，然后选择 **Clone**。
 
-## Create a volume
+## 创建卷
 
-You use the following steps to create an empty volume. Alternatively, if you
-[start a container with a volume](../../storage/volumes.md#start-a-container-with-a-volume)
-that doesn't yet exist, Docker creates the volume for you.
+你可以使用以下步骤创建一个空卷。或者，如果你[启动带有卷的容器](../../storage/volumes.md#start-a-container-with-a-volume)且该卷不存在，Docker 会为你创建该卷。
 
-To create a volume:
+创建卷步骤如下：
 
-1. Select the **Create** button.
-2. In the **New Volume** modal, specify a volume name, and then select
-   **Create**.
+1. 选择 **Create** 按钮。
+2. 在 **New Volume** 模态窗口中，指定卷名，然后选择 **Create**。
 
-To use the volume with a container, see [Use volumes](../../storage/volumes.md#start-a-container-with-a-volume).
+要将卷与容器一起使用，请参阅[使用卷](../../storage/volumes.md#start-a-container-with-a-volume)。
 
-## Delete one or more volumes
+## 删除一个或多个卷
 
-Deleting a volume deletes the volume and all its data. When a container is using
-a volume, you can't delete the volume, even if the container is stopped.
-You must first stop and remove any containers
-using the volume before you can delete the volume.
+删除卷会删除卷及其所有数据。当容器正在使用卷时，你无法删除该卷，即使容器已停止。你必须先停止并删除任何使用该卷的容器，然后才能删除该卷。
 
-To delete a volume:
+删除卷步骤如下：
 
-1. Select the **Show volume actions** icon in the **Actions** column for the
-   volume you want to delete.
-2. Select **Delete volume**.
-3. In the **Delete volume?** modal, select **Delete forever**.
+1. 在要删除的卷的 **Actions** 列中选择 **Show volume actions** 图标。
+2. 选择 **Delete volume**。
+3. 在 **Delete volume?** 模态窗口中，选择 **Delete forever**。
 
-To delete multiple volumes:
+删除多个卷步骤如下：
 
-1. Select the checkbox next to all the volumes you want to delete.
-2. Select **Delete**.
-3. In the **Delete volumes?** modal, select **Delete forever**.
+1. 选中要删除的所有卷旁边的复选框。
+2. 选择 **Delete**。
+3. 在 **Delete volumes?** 模态窗口中，选择 **Delete forever**。
 
-## Empty a volume
+## 清空卷
 
-Emptying a volume deletes all a volume's data, but doesn't delete the volume.
-When emptying a volume used by one or more running containers, the containers
-are temporarily stopped while Docker empties the data, and then restarted when
-the emptying process is completed.
+清空卷会删除卷中的所有数据，但不会删除卷。当清空被一个或多个运行中的容器使用的卷时，容器会在清空数据时暂时停止，并在清空过程完成后重新启动。
 
-To empty a volume:
+清空卷步骤如下：
 
-1. Sign in to Docker Desktop. You must be signed in to empty a volume.
-2. Select the **Show volume actions** icon in the **Actions** column for the
-   volume you want to delete.
-3. Select **Empty volume**.
-4. In the **Empty a volume?** modal, select **Empty**.
+1. 登录 Docker Desktop。你必须登录才能清空卷。
+2. 在要清空的卷的 **Actions** 列中选择 **Show volume actions** 图标。
+3. 选择 **Empty volume**。
+4. 在 **Empty a volume?** 模态窗口中，选择 **Empty**。
 
-## Export a volume
+## 导出卷
 
-> **Beta feature**
+> **测试功能**
 >
-> The export volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
+> 卷导出功能目前处于[测试阶段](../../release-lifecycle.md/#beta)。
 { .experimental }
 
-You can export the content of a volume to a local file, a local image, or an to
-an image in Docker Hub. When exporting content from a volume used by one or more
-running containers, the containers are temporarily stopped while Docker exports
-the content, and then restarted when the export process is completed.
+你可以将卷的内容导出到本地文件、本地镜像或 Docker Hub 上的镜像。当导出一个或多个运行中的容器使用的卷的内容时，容器会在导出内容时暂时停止，并在导出过程完成后重新启动。
 
-To export a volume:
+导出卷步骤如下：
 
-1. Sign in to Docker Desktop. You must be signed in to export a volume.
-2. Select the **Export** icon in the **Actions** column for the
-   volume you want to export content from.
-3. In the **Export content** modal, select where to export the content to and
-   then specify the following additional details depending on your selection:
+1. 登录 Docker Desktop。你必须登录才能导出卷。
+2. 在要导出内容的卷的 **Actions** 列中选择 **Export** 图标。
+3. 在 **Export content** 模态窗口中，选择要导出内容的位置，然后根据你的选择指定以下附加详细信息：
 
-   - **Local file**: Specify a file name and select a folder.
-   - **Local image**: Select a local image to export the content to. Any
-    existing data in the image will be replaced by the exported content.
-   - **New image**: Specify a name for the new image.
-   - **Registry**: Specify a Docker Hub repository. Note that Docker Hub
-     repositories can be publicly accessible which means your data can be
-     publicly accessible. For more details, see
-     [Change a repository from public to private](/docker-hub/repos/#change-a-repository-from-public-to-private).
+   - **本地文件**：指定文件名并选择文件夹。
+   - **本地镜像**：选择要导出内容到的本地镜像。任何现有数据将被导出的内容替换。
+   - **新镜像**：指定新镜像的名称。
+   - **注册表**：指定 Docker Hub 仓库。注意，Docker Hub 仓库可以公开访问，这意味着你的数据可能会公开访问。有关更多详情，请参阅[将仓库从公开更改为私有](../../docker-hub/repos/#change-a-repository-from-public-to-private)。
 
-4. Select **Export**.
+4. 选择 **Export**。
 
-## Import a volume
+## 导入卷
 
-> **Beta feature**
+> **测试功能**
 >
-> The import volume feature is currently in [Beta](../../release-lifecycle.md/#beta).
+> 卷导入功能目前处于[测试阶段](../../release-lifecycle.md/#beta)。
 { .experimental }
 
-You can import a local file, a local image, or an image from Docker Hub. Any
-existing data in the volume is replaced by the imported content. When importing
-content to a volume used by one or more running containers, the containers are
-temporarily stopped while Docker imports the content, and then restarted when
-the import process is completed.
+你可以从本地文件、本地镜像或 Docker Hub 镜像导入卷。导入的内容将替换卷中的任何现有数据。当导入一个或多个运行中的容器使用的卷的内容时，容器会在导入内容时暂时停止，并在导入过程完成后重新启动。
 
-To import a volume:
+导入卷步骤如下：
 
-1. Sign in to Docker Desktop. You must be signed in to import a volume.
-2. Optionally, [create](#create-a-volume) a new volume to import the content
-   into.
-3. Select the **Import** icon in the **Actions** column for the
-   volume you want to import content in to.
-4. In the **Import content** modal, select where the content is coming from and
-   then specify the following additional details depending on your selection:
+1. 登录 Docker Desktop。你必须登录才能导入卷。
+2. 可选地，[创建](#create-a-volume)一个新卷以导入内容。
+3. 在要导入内容的卷的 **Actions** 列中选择 **Import** 图标。
+4. 在 **Import content** 模态窗口中，选择内容的来源，然后根据你的选择指定以下附加详细信息：
 
-   - **Local file**: Select the file that contains the content.
-   - **Local image**: Select the local image that contains the content.
-   - **Registry**: Specify the image from Docker Hub that contains the content.
+   - **本地文件**：选择包含内容的文件。
+   - **本地镜像**：选择包含内容的本地镜像。
+   - **注册表**：指定包含内容的 Docker Hub 镜像。
 
-5. Select **Import**.
+5. 选择 **Import**。
 
-## Inspect a volume
+## 检查卷
 
-To explore the details of a specific volume, select a volume from the list. This
-opens the detailed view.
+要查看特定卷的详细信息，请从列表中选择一个卷。这会打开详细视图。
 
-The **In Use** tab displays the name of the container using the volume, the
-image name, the port number used by the container, and the target. A target is a
-path inside a container that gives access to the files in the volume.
+**In Use** 选项卡显示使用该卷的容器名称、镜像名称、容器使用的端口号和目标。目标是容器内的路径，提供对卷中文件的访问。
 
-The **Data** tab displays the files and folders in the volume and the file size.
-To save a file or a folder, right-click on the file or folder to display the
-options menu, select **Save as...**, and then specify a location to download the
-file.
+**Data** 选项卡显示卷中的文件和文件夹以及文件大小。要保存文件或文件夹，请右键单击文件或文件夹以显示选项菜单，选择 **Save as...**，然后指定下载文件的位置。
 
-To delete a file or a folder from the volume, right-click on the file or folder
-to display the options menu, select **Delete**, and then select **Delete** again
-to confirm.
+要从卷中删除文件或文件夹，请右键单击文件或文件夹以显示选项菜单，选择 **Delete**，然后再次选择 **Delete** 以确认。
 
-## Additional resources
+## 其他资源
 
-- [Persisting container data](../../guides/docker-concepts/running-containers/persisting-container-data.md)
-- [Use volumes](../../storage/volumes.md)
+- [持久化容器数据](../../guides/docker-concepts/running-containers/persisting-container-data.md)
+- [使用卷](../../storage/volumes.md)
